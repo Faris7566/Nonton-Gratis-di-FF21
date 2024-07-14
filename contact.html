@@ -8,7 +8,7 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
     <script>
-        (function(){
+        (function() {
             emailjs.init("42HWsFzF9qj4U5O42"); // Ganti dengan User ID EmailJS Anda
         })();
     </script>
@@ -51,8 +51,8 @@
         </section>
     </main>
     <footer>
-    <p>&copy; 2024 FF21. All rights reserved. Designed by <a href="https://www.instagram.com/xyxoaz_?igsh=ODh5anJocmwwbnNh" target="_blank">Faris Ferdiansyah</a></p>
-</footer>
+        <p>&copy; 2024 FF21. All rights reserved. Designed by <a href="https://www.instagram.com/xyxoaz_?igsh=ODh5anJocmwwbnNh" target="_blank">Faris Ferdiansyah</a></p>
+    </footer>
 
     <script>
         $(document).ready(function() {
@@ -66,4 +66,21 @@
                     template_id: 'template_r4ljb6l', // Ganti dengan template ID Anda
                     user_id: '42HWsFzF9qj4U5O42',
                     template_params: {
-                        'from
+                        'from_name': $('#name').val(),
+                        'whatsapp': $('#whatsapp').val(),
+                        'message': $('#message').val()
+                    }
+                };
+
+                emailjs.send(formData.service_id, formData.template_id, formData.template_params)
+                    .then(function(response) {
+                        $('#form-messages').text('Pesan Anda telah terkirim!');
+                        $('#ajax-contact')[0].reset();
+                    }, function(error) {
+                        $('#form-messages').text('Maaf, ada kesalahan dalam mengirim pesan. Silakan coba lagi nanti.');
+                    });
+            });
+        });
+    </script>
+</body>
+</html>
