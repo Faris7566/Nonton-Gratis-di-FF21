@@ -1,0 +1,311 @@
+/* Global Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #141414;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Navbar Styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 10px 20px;
+}
+
+.navbar-left {
+    flex: 1;
+}
+
+.navbar-right {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.logo {
+    height: 50px;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar li {
+    margin-left: 20px;
+}
+
+.navbar a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.navbar a:hover {
+    text-decoration: underline;
+}
+
+/* Main Content Styles */
+.main-content {
+    flex: 1;
+    padding: 20px;
+}
+
+.banner {
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    padding: 50px 20px;
+    margin: 20px 0;
+}
+
+.banner h1 {
+    margin: 0 0 20px;
+    font-size: 2.5em;
+}
+
+.banner p {
+    font-size: 1.2em;
+}
+
+.banner .btn {
+    background-color: #e50914;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.banner .btn:hover {
+    background-color: #f40612;
+}
+
+/* Popular Movies Section */
+.popular-movies {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.movie {
+    background-color: #222;
+    border-radius: 10px;
+    overflow: hidden;
+    margin: 10px;
+    width: calc(20% - 20px);
+    box-sizing: border-box;
+    position: relative;
+    text-align: center;
+}
+
+.movie img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.movie h3 {
+    margin: 10px 0;
+    font-size: 1.2em;
+}
+
+/* Movies Page */
+.movies-section {
+    padding: 20px;
+    background-color: #222;
+    border-radius: 10px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.movies-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.movies-grid .movie {
+    width: calc(20% - 20px);
+    margin: 10px;
+}
+
+.movie img {
+    width: 100%;
+    border-bottom: 3px solid #e50914;
+}
+
+.movie h3 {
+    padding: 10px;
+}
+
+/* Info Page */
+.info-section {
+    padding: 20px;
+    background-color: #222;
+    border-radius: 10px;
+    max-width: 800px;
+    margin: auto;
+}
+
+.info-section h2, .info-section h3 {
+    text-align: center;
+}
+
+.info-section p, .info-section ul {
+    margin-bottom: 20px;
+}
+
+.info-section ul {
+    padding-left: 20px;
+}
+
+.info-section ul li {
+    list-style-type: disc;
+}
+
+.request-button {
+    text-align: right;
+    margin-top: 20px;
+}
+
+.request-movie-button {
+    background-color: #e50914;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+.request-movie-button:hover {
+    background-color: #f40612;
+}
+
+/* Contact Page */
+.contact-section {
+    padding: 20px;
+    background-color: #222;
+    border-radius: 10px;
+    max-width: 400px;
+    margin: auto;
+}
+
+.contact-section h2 {
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 30px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 95%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #333;
+    color: #fff;
+    font-size: 14px;
+    height: 40px;
+}
+
+textarea {
+    height: 80px;
+}
+
+button {
+    background-color: #e50914;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+button:hover {
+    background-color: #f40612;
+}
+
+#form-messages {
+    margin-top: 20px;
+    text-align: center;
+    color: #e50914;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #141414;
+    text-align: center;
+    padding: 10px 0;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: auto;
+}
+
+footer a {
+    color: #e50914;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .navbar ul {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    .navbar li {
+        margin: 5px 0;
+    }
+
+    .info-section, .contact-section {
+        padding: 10px;
+    }
+
+    .request-button {
+        text-align: center;
+    }
+
+    button {
+        width: 100%;
+    }
+
+    .popular-movies .movie,
+    .movies-grid .movie {
+        width: calc(50% - 20px);
+    }
+}

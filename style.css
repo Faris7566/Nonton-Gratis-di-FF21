@@ -1,0 +1,258 @@
+/* Global Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #141414;
+    color: #ffffff;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Navbar Styles */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 10px 20px;
+}
+
+.navbar-left {
+    flex: 1;
+}
+
+.navbar-right {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.logo {
+    height: 50px;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar li {
+    margin-left: 20px;
+}
+
+.navbar a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.navbar a:hover {
+    text-decoration: underline;
+}
+
+/* Banner Styles */
+.banner {
+    background-color: #000; /* Set the background color to black */
+    color: #ffffff;
+    text-align: center;
+    padding: 100px 20px;
+    position: relative;
+    width: 100%;
+    height: auto;
+    box-sizing: border-box; /* Include padding in element's total width and height */
+}
+
+.banner-content {
+    padding: 20px;
+    display: inline-block;
+    border-radius: 10px;
+    max-width: 800px;
+    margin: auto;
+}
+
+.banner h1 {
+    font-size: 3em;
+    margin: 0;
+}
+
+.banner p {
+    font-size: 1.5em;
+}
+
+.watch-now-button {
+    background-color: #e50914;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    cursor: pointer;
+    border-radius: 5px;
+    display: inline-block;
+    margin-top: 20px;
+}
+
+.watch-now-button:hover {
+    background-color: #f40612;
+}
+
+/* Main Content Styles */
+.main {
+    padding: 20px;
+}
+
+.movies-section {
+    padding: 20px;
+}
+
+.movies-section h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.movie-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.movie-card {
+    background-color: #222;
+    border-radius: 5px;
+    overflow: hidden;
+    width: calc(25% - 20px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s;
+    cursor: pointer;
+}
+
+.movie-card img {
+    width: 100%;
+    height: auto;
+}
+
+.movie-card h3 {
+    margin: 10px;
+}
+
+.movie-card:hover {
+    transform: scale(1.05);
+}
+
+footer {
+    background-color: #141414;
+    text-align: center;
+    padding: 10px 0;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: auto;
+}
+
+footer a {
+    color: #e50914;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    width: 80%;
+    max-width: 800px;
+    position: relative;
+}
+
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+video {
+    width: 100%;
+    border-radius: 10px;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .navbar ul {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    .navbar li {
+        margin: 5px 0;
+    }
+
+    .movie-card {
+        width: calc(50% - 20px);
+    }
+
+    .banner h1 {
+        font-size: 2.5em;
+    }
+
+    .banner p {
+        font-size: 1.2em;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar ul {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar li {
+        margin: 5px 0;
+    }
+
+    .movie-card {
+        width: 100%;
+    }
+
+    .banner h1 {
+        font-size: 2em;
+    }
+
+    .banner p {
+        font-size: 1em;
+    }
+
+    .watch-now-button {
+        font-size: 1em;
+        padding: 8px 16px;
+    }
+}

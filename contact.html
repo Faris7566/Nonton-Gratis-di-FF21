@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Contact - FF21</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script>
+        (function(){
+            emailjs.init("42HWsFzF9qj4U5O42"); // Ganti dengan User ID EmailJS Anda
+        })();
+    </script>
+</head>
+<body>
+    <header class="navbar">
+        <div class="navbar-left">
+            <img src="logo.png" class="logo">
+        </div>
+        <div class="navbar-right">
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="movies.html">Movies</a></li>
+                    <li><a href="request.html">Request Movie</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <main class="main-content">
+        <section class="contact-section">
+            <h2>Contact Us</h2>
+            <form id="ajax-contact" method="post">
+                <div class="form-group">
+                    <label for="name">Nama:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="whatsapp">No Whatsapp:</label>
+                    <input type="text" id="whatsapp" name="whatsapp" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Request Film/Ulasan:</label>
+                    <textarea id="message" name="message" required></textarea>
+                </div>
+                <button type="submit">Kirim</button>
+            </form>
+            <div id="form-messages"></div>
+        </section>
+    </main>
+    <footer>
+    <p>&copy; 2024 FF21. All rights reserved. Designed by <a href="https://www.instagram.com/xyxoaz_?igsh=ODh5anJocmwwbnNh" target="_blank">Faris Ferdiansyah</a></p>
+</footer>
+
+    <script>
+        $(document).ready(function() {
+            $('#ajax-contact').submit(function(event) {
+                event.preventDefault();
+                
+                $('#form-messages').text('Loading...');
+
+                var formData = {
+                    service_id: 'service_i6f4dwr', // Ganti dengan service ID Anda
+                    template_id: 'template_r4ljb6l', // Ganti dengan template ID Anda
+                    user_id: '42HWsFzF9qj4U5O42',
+                    template_params: {
+                        'from
