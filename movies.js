@@ -1,28 +1,29 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const movieCards = document.querySelectorAll('.movie-card');
+document.addEventListener('DOMContentLoaded', function () {
     const modal = document.getElementById('modal');
-    const videoPlayer = document.getElementById('video-player');
+    const videoContainer = document.getElementById('video-container');
     const closeButton = document.querySelector('.close-button');
 
-    movieCards.forEach(card => {
-        card.addEventListener('click', () => {
-            const videoSrc = card.getAttribute('data-video');
-            videoPlayer.src = videoSrc;
+    document.querySelectorAll('.play-button').forEach(button => {
+        button.addEventListener('click', function () {
+            const videoSrc = this.parentElement.parentElement.getAttribute('data-video');
+            if (videoSrc.includes('drive.google.com')) {
+                videoContainer.innerHTML = `<iframe src="${videoSrc}" width="640" height="480" frameborder="0" allowfullscreen></iframe>`;
+            } else {
+                videoContainer.innerHTML = `<video controls autoplay><source src="${videoSrc}" type="video/mp4">Your browser does not support the video tag.</video>`;
+            }
             modal.style.display = 'flex';
         });
     });
 
-    closeButton.addEventListener('click', () => {
+    closeButton.addEventListener('click', function () {
         modal.style.display = 'none';
-        videoPlayer.pause();
-        videoPlayer.src = '';
+        videoContainer.innerHTML = '';
     });
 
-    window.addEventListener('click', (e) => {
-        if (e.target === modal) {
+    window.addEventListener('click', function (event) {
+        if (event.target === modal) {
             modal.style.display = 'none';
-            videoPlayer.pause();
-            videoPlayer.src = '';
+            videoContainer.innerHTML = '';
         }
     });
 });
